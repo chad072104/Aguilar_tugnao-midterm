@@ -10,7 +10,7 @@ export default function Dashboard() {
       <h1>Feed Production Dashboard</h1>
 
       <KPICards
-  dateRange={{ start: "2026-01-01", end: "2026-12-31" }}
+  dateRange={{ start: "2020-01-01", end: "2026-12-31" }}
   feedType="all"
   customer="all"
   sortBy="revenue"

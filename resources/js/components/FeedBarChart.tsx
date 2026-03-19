@@ -1,38 +1,35 @@
-import React from "react";
 import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-  ResponsiveContainer
+  BarChart, Bar, XAxis, YAxis, Tooltip,
+  CartesianGrid, ResponsiveContainer, Legend
 } from "recharts";
 
-type FeedData = {
-  name: string;
-  sales: number;
-};
-
-const data: FeedData[] = [
-  { name: "Starter Feed", sales: 400 },
-  { name: "Grower Feed", sales: 600 },
-  { name: "Finisher Feed", sales: 800 },
-  { name: "Layer Feed", sales: 300 }
+const data = [
+  { name: "Starter Feed", sales: 120 },
+  { name: "Grower Feed", sales: 180 },
+  { name: "Finisher Feed", sales: 250 },
+  { name: "Layer Feed", sales: 200 },
+  { name: "Broiler Feed", sales: 300 },
+  { name: "Organic Feed", sales: 90 },
+  { name: "Mash Feed", sales: 140 },
+  { name: "Pellet Feed", sales: 220 },
+  { name: "Crumbles", sales: 160 },
+  { name: "Custom Mix A", sales: 110 },
+  { name: "Custom Mix B", sales: 130 },
+  { name: "Duck Feed", sales: 170 },
+  { name: "Pig Feed", sales: 260 },
 ];
 
-const FeedBarChart: React.FC = () => {
+export default function FeedBarChart() {
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={350}>
       <BarChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid />
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Bar dataKey="sales" fill="#0edd0e" />
+        <Legend />
+        <Bar dataKey="sales" fill="#4CAF50" />
       </BarChart>
     </ResponsiveContainer>
   );
-};
-
-export default FeedBarChart;
+}

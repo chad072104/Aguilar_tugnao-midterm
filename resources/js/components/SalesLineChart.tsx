@@ -1,42 +1,43 @@
-import React from "react";
 import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  CartesianGrid,
-  Legend,
-  ResponsiveContainer
+  LineChart, Line, XAxis, YAxis,
+  Tooltip, ResponsiveContainer, CartesianGrid, Legend
 } from "recharts";
 
-type SalesData = {
-  month: string;
-  sales: number;
-  forecast: number;
-};
+const data = [
+  // 2024
+  { month: "Jan 2024", sales: 4000 },
+  { month: "Feb 2024", sales: 4200 },
+  { month: "Mar 2024", sales: 4600 },
+  { month: "Apr 2024", sales: 4800 },
+  { month: "May 2024", sales: 5300 },
+  { month: "Jun 2024", sales: 6000 },
+  { month: "Jul 2024", sales: 5800 },
+  { month: "Aug 2024", sales: 6200 },
+  { month: "Sep 2024", sales: 6400 },
+  { month: "Oct 2024", sales: 7000 },
+  { month: "Nov 2024", sales: 7500 },
+  { month: "Dec 2024", sales: 8000 },
 
-const data: SalesData[] = [
-  { month: "Jan", sales: 300, forecast: 320 },
-  { month: "Feb", sales: 350, forecast: 360 },
-  { month: "Mar", sales: 400, forecast: 420 },
-  { month: "Apr", sales: 450, forecast: 470 }
+  // 2025
+  { month: "Jan 2025", sales: 8200 },
+  { month: "Feb 2025", sales: 8600 },
+  { month: "Mar 2025", sales: 9000 },
+  { month: "Apr 2025", sales: 9400 },
+  { month: "May 2025", sales: 9800 },
+  { month: "Jun 2025", sales: 10200 },
 ];
 
-const SalesLineChart: React.FC = () => {
+export default function SalesLineChart() {
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={350}>
       <LineChart data={data}>
-        <CartesianGrid strokeDasharray="3 3" />
+        <CartesianGrid />
         <XAxis dataKey="month" />
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="sales" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="forecast" stroke="#ff7300" />
+        <Line type="monotone" dataKey="sales" stroke="#2196F3" />
       </LineChart>
     </ResponsiveContainer>
   );
-};
-
-export default SalesLineChart;
+}

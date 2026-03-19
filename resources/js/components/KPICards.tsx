@@ -17,5 +17,10 @@ const KPICards: React.FC<KPICardsProps> = ({ dateRange, feedType, customer, sort
     </div>
   );
 };
-
+export const kpiData = {
+  totalSales: 125000,
+  totalProduction: 8500,
+  totalRevenue: 220000,
+  topProduct: "Broiler Feed",
+};
 export default KPICards;
